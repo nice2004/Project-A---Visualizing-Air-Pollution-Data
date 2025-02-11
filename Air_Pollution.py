@@ -35,7 +35,7 @@ app.layout = html.Div([
                  options=[{'label': site, 'value': site} for site in df['Local Site Name'].unique()],
                  multi=True,
                  value=df['Local Site Name'].unique()[0]  # default to one site
-                 ), dcc.Graph(id='Air Index Graph in San Francisco')
+                 ), dcc.Graph(id='Air Index Graph in Northern California Due to Carbon Monoxide')
 ])
 
 
@@ -46,7 +46,7 @@ app.layout = html.Div([
 # to user interactions like clicking a button, selecting a value from a dropdown,
 # or dragging a slider.
 
-@app.callback(Output('Air Index Graph in San Francisco', 'figure'),
+@app.callback(Output('Air Index Graph in Northern California Due to Carbon Monoxide', 'figure'),
               Input('site-dropdown', 'value'))
 # is in is always used for sites only, so created a list for local sites
 def update_graph(selected_site):
@@ -59,7 +59,7 @@ def update_graph(selected_site):
                  labels={'Date': "Date", 'Daily AQI Value': 'AQI Value'})
     fig.update_layout(
         title={
-            'text': f'Air Quality Index for {selected_site} over Time',
+            'text': f'Air Quality Index for {selected_site} over Time in Northern California',
             'y': 0.9,  # vertical position
             'x': 0.5,  # Center the Title
             'xanchor': 'center',
