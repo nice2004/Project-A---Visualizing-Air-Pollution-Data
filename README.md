@@ -1,9 +1,8 @@
 # Project-A---Visualizing-Air-Pollution-Data
 
-***Names: Nice Teta Hirwa***
-$~$
-***Instructor: Professor Mike Ryu*** $~$
-***Class: CS-150*** $~$
+***Names: Nice Teta Hirwa*** <br />
+***Instructor: Professor Mike Ryu*** <br />
+***Class: CS-150*** <br />
 
 ## Thesis Statement
 Exploring the relationship between the air quality index in North California local sites and the months in the year of 2020
