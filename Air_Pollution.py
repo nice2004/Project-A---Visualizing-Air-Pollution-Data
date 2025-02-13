@@ -12,12 +12,6 @@ print(df.head())
 print(df['Daily Max 8-hour CO Concentration'])
 
 has_missing_values1 = df['Daily Max 8-hour CO Concentration'].isnull().any()
-has_missing_values2 = df['Daily AQI Value'].isnull().any()
-has_missing_values3 = df['Local Site Name'].isnull().any()
-has_missing_values4 = df['Date'].isnull().any()
-print(has_missing_values1)
-print(has_missing_values1)
-print(has_missing_values1)
 print(has_missing_values1)
 
 # changing the date column to date time
@@ -54,9 +48,10 @@ def update_graph(selected_site):
         selected_site = [selected_site]
     # filter the dataframe to include only the selected sites
     filtered_df = df[df['Local Site Name'].isin(selected_site)]
-    fig = px.bar(filtered_df, x='Date',
-                 y='Daily AQI Value', color='Local Site Name', title=f'Air Quality Index for {selected_site} over Time',
-                 labels={'Date': "Date", 'Daily AQI Value': 'AQI Value'})
+    fig = px.line(filtered_df, x='Date',
+                  y='Daily AQI Value', color='Local Site Name',
+                  title=f'Air Quality Index for {selected_site} over Time',
+                  labels={'Date': "Date", 'Daily AQI Value': 'AQI Value'})
     fig.update_layout(
         title={
             'text': f'Air Quality Index for {selected_site} over Time in Northern California',
